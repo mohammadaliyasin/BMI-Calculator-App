@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CustomButton extends StatelessWidget {
    CustomButton({
-    in
+    required this.onPressed,
     required this.text,
     this.buttonColor = AppColor.BUTTON_BG_COLOR,
     this.textColor = AppColor.BUTTON_FG_COLOR, 
@@ -25,9 +25,9 @@ class CustomButton extends StatelessWidget {
       width: width,
       child: ElevatedButton(
         style: ButtonStyle(
-          backgroundColor: MaterialStatePropertyAll(buttonColor),
-          foregroundColor: MaterialStatePropertyAll(textColor),
-          textStyle: MaterialStateProperty.all(TextStyle(fontFamily: GoogleFonts.poppins().fontFamily)),
+          backgroundColor: WidgetStatePropertyAll(buttonColor),
+          foregroundColor: WidgetStatePropertyAll(textColor),
+          textStyle: WidgetStateProperty.all(TextStyle(fontFamily: GoogleFonts.poppins().fontFamily)),
         ),
         onPressed: onPressed,
         child: Text(text),
